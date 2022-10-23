@@ -30,35 +30,35 @@ export default function getPlace(lat: number, lng: number) {
       // place.street_number = json.results[2].address_components[0].short_name;
 
       for (let i = 0; json.results.length; i++) {
-        // if (json.results[i].address_components[0] !== undefined) {
-        //   addressComponents = json.results[i].address_components[0];
-        // }
-        // if (addressComponents !== undefined) {
-        //   if (addressComponents.types[0] === 'street_number') {
-        //     // console.log('номер дома ' + addressComponents.long_name);
-        //     place.street_number = addressComponents.long_name;
-        //   }
-        //   if (addressComponents.types[0] === 'route') {
-        //     // console.log('улица ' + addressComponents.long_name);
-        //     place.route = addressComponents.long_name;
-        //   }
-        //   if (addressComponents.types[0] === 'locality') {
-        //     // console.log('город ' + addressComponents.long_name);
-        //     place.locality = addressComponents.long_name;
-        //   }
-        //   if (addressComponents.types[0] === 'administrative_area_level_2') {
-        //     // console.log('район ' + addressComponents.long_name);
-        //     place.administrative_area_level_2 = addressComponents.long_name;
-        //   }
-        //   if (addressComponents.types[0] === 'administrative_area_level_1') {
-        //     // console.log('область ' + addressComponents.long_name);
-        //     place.administrative_area_level_1 = addressComponents.long_name;
-        //   }
-        //   if (addressComponents.types[0] === 'country') {
-        //     // console.log('страна ' + addressComponents.long_name);
-        //     place.country = addressComponents.long_name;
-        //   }
-        // }
+        if (json.results[i].address_components[0] !== undefined) {
+          addressComponents = json.results[i].address_components[0];
+        }
+        if (addressComponents !== undefined) {
+          if (addressComponents.types[0] === 'street_number') {
+            // console.log('номер дома ' + addressComponents.long_name);
+            place.street_number = addressComponents.long_name;
+          }
+          if (addressComponents.types[0] === 'route') {
+            // console.log('улица ' + addressComponents.long_name);
+            place.route = addressComponents.long_name;
+          }
+          if (addressComponents.types[0] === 'locality') {
+            // console.log('город ' + addressComponents.long_name);
+            place.locality = addressComponents.long_name;
+          }
+          if (addressComponents.types[0] === 'administrative_area_level_2') {
+            // console.log('район ' + addressComponents.long_name);
+            place.administrative_area_level_2 = addressComponents.long_name;
+          }
+          if (addressComponents.types[0] === 'administrative_area_level_1') {
+            // console.log('область ' + addressComponents.long_name);
+            place.administrative_area_level_1 = addressComponents.long_name;
+          }
+          if (addressComponents.types[0] === 'country') {
+            // console.log('страна ' + addressComponents.long_name);
+            place.country = addressComponents.long_name;
+          }
+        }
       }
     })
     .catch(error => console.warn(error));
