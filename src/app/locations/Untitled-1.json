@@ -1,0 +1,456 @@
+{
+   "plus_code" : {
+      "compound_code" : "JFVC+X8V Палиевка, Одесская область, Украина",
+      "global_code" : "8GRGJFVC+X8V"
+   },
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "JFWC+9Q",
+               "short_name" : "JFWC+9Q",
+               "types" : [ "plus_code" ]
+            },
+            {
+               "long_name" : "Палиевка",
+               "short_name" : "Палиевка",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Беляевский район",
+               "short_name" : "Беляевский район",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Одесская область",
+               "short_name" : "Одесская область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "67621",
+               "short_name" : "67621",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "JFWC+9Q, Палиевка, Одесская область, Украина, 67621",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 46.6460367,
+                  "lng" : 30.4719831
+               },
+               "southwest" : {
+                  "lat" : 46.6459737,
+                  "lng" : 30.4718929
+               }
+            },
+            "location" : {
+               "lat" : 46.646003,
+               "lng" : 30.4719513
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 46.6473541802915,
+                  "lng" : 30.4732869802915
+               },
+               "southwest" : {
+                  "lat" : 46.6446562197085,
+                  "lng" : 30.47058901970851
+               }
+            }
+         },
+         "place_id" : "ChIJv9NQNbycyEARTPdZGaA3z4M",
+         "types" : [ "premise" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "JFVC+X8",
+               "short_name" : "JFVC+X8",
+               "types" : [ "plus_code" ]
+            },
+            {
+               "long_name" : "Палиевка",
+               "short_name" : "Палиевка",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Беляевский район",
+               "short_name" : "Беляевский район",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Одесская область",
+               "short_name" : "Одесская область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "67621",
+               "short_name" : "67621",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "JFVC+X8 Палиевка, Одесская область, Украина",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 46.645,
+                  "lng" : 30.470875
+               },
+               "southwest" : {
+                  "lat" : 46.644875,
+                  "lng" : 30.47075
+               }
+            },
+            "location" : {
+               "lat" : 46.645,
+               "lng" : 30.4708
+            },
+            "location_type" : "GEOMETRIC_CENTER",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 46.6462864802915,
+                  "lng" : 30.4721614802915
+               },
+               "southwest" : {
+                  "lat" : 46.6435885197085,
+                  "lng" : 30.4694635197085
+               }
+            }
+         },
+         "place_id" : "GhIJwvUoXI9SR0AR8PRKWYZ4PkA",
+         "plus_code" : {
+            "compound_code" : "JFVC+X8 Палиевка, Одесская область, Украина",
+            "global_code" : "8GRGJFVC+X8"
+         },
+         "types" : [ "plus_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "вул. Їжаковського",
+               "short_name" : "вул. Їжаковського",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Паліївка",
+               "short_name" : "Паліївка",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Біляївський район",
+               "short_name" : "Біляївський район",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Одеська область",
+               "short_name" : "Одеська область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "67621",
+               "short_name" : "67621",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "вул. Їжаковського, Паліївка, Одеська область, Украина, 67621",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 46.6503591,
+                  "lng" : 30.4781506
+               },
+               "southwest" : {
+                  "lat" : 46.6469562,
+                  "lng" : 30.470657
+               }
+            },
+            "location" : {
+               "lat" : 46.648612,
+               "lng" : 30.4744324
+            },
+            "location_type" : "GEOMETRIC_CENTER",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 46.6503591,
+                  "lng" : 30.4781506
+               },
+               "southwest" : {
+                  "lat" : 46.6469562,
+                  "lng" : 30.470657
+               }
+            }
+         },
+         "place_id" : "ChIJaQ9pO5acyEARwubs5oOrQ8Y",
+         "types" : [ "route" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Палиевка",
+               "short_name" : "Палиевка",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Беляевский район",
+               "short_name" : "Беляевский район",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Одесская область",
+               "short_name" : "Одесская область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "67621",
+               "short_name" : "67621",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "Палиевка, Одесская область, Украина, 67621",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 46.6527131,
+                  "lng" : 30.4842439
+               },
+               "southwest" : {
+                  "lat" : 46.63582,
+                  "lng" : 30.456552
+               }
+            },
+            "location" : {
+               "lat" : 46.6450521,
+               "lng" : 30.4707782
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 46.6527131,
+                  "lng" : 30.4842439
+               },
+               "southwest" : {
+                  "lat" : 46.63582,
+                  "lng" : 30.456552
+               }
+            }
+         },
+         "place_id" : "ChIJJ-YgDLycyEAR-tBdrnTkUmc",
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "67621",
+               "short_name" : "67621",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Палиевка",
+               "short_name" : "Палиевка",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Беляевский район",
+               "short_name" : "Беляевский район",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Одесская область",
+               "short_name" : "Одесская область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Палиевка, Одесская область, Украина, 67621",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 46.6527131,
+                  "lng" : 30.4842439
+               },
+               "southwest" : {
+                  "lat" : 46.63582,
+                  "lng" : 30.431743
+               }
+            },
+            "location" : {
+               "lat" : 46.6470032,
+               "lng" : 30.4641342
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 46.6527131,
+                  "lng" : 30.4842439
+               },
+               "southwest" : {
+                  "lat" : 46.63582,
+                  "lng" : 30.431743
+               }
+            }
+         },
+         "place_id" : "ChIJiYA-r6WcyEARQq28XpQg2-0",
+         "postcode_localities" : [ "Зоряное", "Палиевка" ],
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Беляевский район",
+               "short_name" : "Беляевский район",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Одесская область",
+               "short_name" : "Одесская область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Беляевский район, Одесская область, Украина",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 46.83971,
+                  "lng" : 30.730026
+               },
+               "southwest" : {
+                  "lat" : 46.3742911,
+                  "lng" : 29.876052
+               }
+            },
+            "location" : {
+               "lat" : 46.5584709,
+               "lng" : 30.2732784
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 46.83971,
+                  "lng" : 30.730026
+               },
+               "southwest" : {
+                  "lat" : 46.3742911,
+                  "lng" : 29.876052
+               }
+            }
+         },
+         "place_id" : "ChIJrSBz9sOFyEARgH7raPv002s",
+         "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Одесская область",
+               "short_name" : "Одесская область",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Одесская область, Украина",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 48.233306,
+                  "lng" : 31.305305
+               },
+               "southwest" : {
+                  "lat" : 45.204082,
+                  "lng" : 28.2128888
+               }
+            },
+            "location" : {
+               "lat" : 46.484583,
+               "lng" : 30.7326
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 48.233306,
+                  "lng" : 31.305305
+               },
+               "southwest" : {
+                  "lat" : 45.204082,
+                  "lng" : 28.2128888
+               }
+            }
+         },
+         "place_id" : "ChIJaRSOmoExxkARxdd-tWjwax8",
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Украина",
+               "short_name" : "UA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Украина",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 52.3793713,
+                  "lng" : 40.2204802
+               },
+               "southwest" : {
+                  "lat" : 44.2924,
+                  "lng" : 22.137159
+               }
+            },
+            "location" : {
+               "lat" : 48.379433,
+               "lng" : 31.1655799
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.3793713,
+                  "lng" : 40.2204802
+               },
+               "southwest" : {
+                  "lat" : 44.2924,
+                  "lng" : 22.137159
+               }
+            }
+         },
+         "place_id" : "ChIJjw5wVMHZ0UAREED2iIQGAQA",
+         "types" : [ "country", "political" ]
+      }
+   ],
+   "status" : "OK"
+}

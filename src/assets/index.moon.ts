@@ -1,0 +1,27 @@
+const Moon = {
+  moon0: require('./moon/moon0.png'),
+  moon4: require('./moon/moon4.png'),
+  moon8: require('./moon/moon8.png'),
+  moon12: require('./moon/moon12.png'),
+  moon16: require('./moon/moon16.png'),
+  moon20: require('./moon/moon20.png'),
+  moon25: require('./moon/moon25.png'),
+  moon29: require('./moon/moon29.png'),
+  moon33: require('./moon/moon33.png'),
+  moon37: require('./moon/moon37.png'),
+  moon45: require('./moon/moon45.png'),
+  moon50: require('./moon/moon50.png'),
+  moon54: require('./moon/moon54.png'),
+  moon58: require('./moon/moon58.png'),
+  moon62: require('./moon/moon62.png'),
+  moon66: require('./moon/moon66.png'),
+  moon70: require('./moon/moon70.png'),
+  moon75: require('./moon/moon75.png'),
+  moon79: require('./moon/moon79.png'),
+  moon83: require('./moon/moon83.png'),
+  moon87: require('./moon/moon87.png'),
+  moon91: require('./moon/moon91.png'),
+  moon95: require('./moon/moon95.png'),
+};
+
+export default Moon;
