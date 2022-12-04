@@ -10,8 +10,9 @@ import {
 } from '../../recoil/yr_weather.state';
 import DayDataTable from './DayDataTable';
 import Loading from '../load/Loading';
+import WeatherButton from '../../navigation/WeatherButton';
 
-export default function WeatherTableRoute() {
+export default function WeatherTableRoute({navigation}: any) {
   const dayData = useRecoilValue(dataHourlyForecast);
   const weatherData = useRecoilValue(yrWeatherState);
 
@@ -54,6 +55,7 @@ export default function WeatherTableRoute() {
         onIndexChange={setIndex}
         initialLayout={{width: layout.width}}
       />
+      <WeatherButton navigation={navigation} />
     </View>
   );
 }

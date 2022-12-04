@@ -61,6 +61,7 @@ const WeatherIcon = {
   snowshowers_night: require('./icon/snowshowers_night.png'),
   snowshowersandthunder_day: require('./icon/snowshowersandthunder_day.png'),
   snowshowersandthunder_night: require('./icon/snowshowersandthunder_night.png'),
+  search: require('./icon/search.png'),
 };
 
 export default WeatherIcon;

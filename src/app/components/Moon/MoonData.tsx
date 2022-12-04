@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {add, format, parseISO} from 'date-fns';
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     marginLeft: -20,
+    marginTop: -5,
   },
   icon: {
     width: 60,

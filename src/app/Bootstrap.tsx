@@ -13,8 +13,10 @@ import {addDays} from 'date-fns';
 import hourlyForecast from './utils/hourlyForecast';
 import dailyReport from './utils/dailyReport';
 import {coordinatesLocation, placeLocation} from './recoil/location.state';
-import GetLocationCoord from './locations/GetLocationCoord';
 import getPlace from './locations/getPlace';
+import {PermissionsAndroid} from 'react-native';
+import Geolocation from 'react-native-geolocation-service';
+import FindPlace from './components/load/FindPlace';
 
 type Props = {
   children: React.ReactNode;
@@ -33,7 +35,51 @@ export default function Bootstrap({children}: Props) {
   const setPlaceLocation = useSetRecoilState(placeLocation);
 
   // получим координаты места и отправим в recoil
-  GetLocationCoord();
+  const [isCoordLoading, setIsCoordLoading] = useState(true);
+  const setCoordLoc = useSetRecoilState(coordinatesLocation);
+  const [acces, setAccess] = useState(false);
+
+  async function RequestGetLocation() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'Доступ к местоположению',
+          message: 'Weather запрашивает доступ к местоположению ',
+          // buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        setAccess(true);
+      } else {
+        setAccess(false);
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
+  useEffect(() => {
+    setIsCoordLoading(true);
+
+    RequestGetLocation();
+    if (acces) {
+      Geolocation.getCurrentPosition(
+        position => {
+          const {altitude, latitude, longitude} = position.coords;
+          setCoordLoc({altitude, latitude, longitude});
+          setIsCoordLoading(false);
+        },
+        error => {
+          console.log(error.code, error.message);
+        },
+        {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+      );
+    }
+  }, [acces, setCoordLoc]);
+
   // возьмем координаты места из recoil
   const coord = useRecoilValue(coordinatesLocation);
 
@@ -93,6 +139,9 @@ export default function Bootstrap({children}: Props) {
     // setDailyValue,
   ]);
 
+  if (isCoordLoading) {
+    return <FindPlace />;
+  }
   if (isWeatherLoading) {
     return <Loading />;
   }

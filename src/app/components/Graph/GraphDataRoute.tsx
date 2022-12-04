@@ -2,6 +2,7 @@ import {addDays, format} from 'date-fns';
 import React from 'react';
 import {StyleSheet, useWindowDimensions, View} from 'react-native';
 import {SceneMap, TabView} from 'react-native-tab-view';
+import WeatherButton from '../../navigation/WeatherButton';
 import GraphData from './GraphData';
 
 const styles = StyleSheet.create({
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function GrarphDataRoute() {
+export default function GrarphDataRoute({navigation}: any) {
   // const dayData = useRecoilValue(dataHourlyForecast);
 
   const layout = useWindowDimensions();
@@ -64,6 +65,7 @@ export default function GrarphDataRoute() {
         onIndexChange={setIndex}
         initialLayout={{width: layout.width}}
       />
+      <WeatherButton navigation={navigation} />
     </View>
   );
 }

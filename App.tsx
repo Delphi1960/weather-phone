@@ -7,6 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Main from './src/app/Main';
 import {RecoilRoot} from 'recoil';
 import Bootstrap from './src/app/Bootstrap';
+import {Provider as PaperProvider} from 'react-native-paper';
 
 // initApi();
 
@@ -15,9 +16,11 @@ export default function App() {
     <NavigationContainer>
       <SafeAreaProvider>
         <RecoilRoot>
-          <Bootstrap>
-            <Main />
-          </Bootstrap>
+          <PaperProvider>
+            <Bootstrap>
+              <Main />
+            </Bootstrap>
+          </PaperProvider>
         </RecoilRoot>
       </SafeAreaProvider>
     </NavigationContainer>

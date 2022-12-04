@@ -1,11 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
 import {Text} from '@react-native-material/core';
-import {differenceInSeconds, setDefaultOptions} from 'date-fns';
+import {setDefaultOptions} from 'date-fns';
 import format from 'date-fns/format';
 import {ru} from 'date-fns/locale';
 import parseISO from 'date-fns/parseISO';
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 
 import Button from '../../../assets/index.button';
 import WeatherIcon from '../../../assets/index.icon';
@@ -35,40 +41,46 @@ export default function WeatherHourly({
   const astroData = useRecoilValue(yrSunriseState);
   let sunrise;
   let sunset;
-  let day = 0;
-  let hour = 0;
-  let min = 0;
-  let sec = 0;
+  // let day = 0;
+  // let hour = 0;
+  // let min = 0;
+  // let sec = 0;
 
   if (astroData !== null) {
     sunrise = astroData[0].location.time[0].sunrise.time.slice(11, -6);
     sunset = astroData[0].location.time[0].sunset.time.slice(11, -6);
     // Вычислим продолжительность дня
-    day = differenceInSeconds(
-      new Date(astroData[0].location.time[0].sunset.time),
-      new Date(astroData[0].location.time[0].sunrise.time),
-    );
-    hour = day / 3600;
-    let h_toThePoint = Math.trunc(hour); // часы
-    let h_afterThePoint = hour - Math.trunc(hour);
-    hour = h_toThePoint;
+    // day = differenceInSeconds(
+    //   new Date(astroData[0].location.time[0].sunset.time),
+    //   new Date(astroData[0].location.time[0].sunrise.time),
+    // );
+    // hour = day / 3600;
+    // let h_toThePoint = Math.trunc(hour); // часы
+    // let h_afterThePoint = hour - Math.trunc(hour);
+    // hour = h_toThePoint;
 
-    let m_toThePoint = h_afterThePoint * 60;
-    let m_afterThePoint = m_toThePoint - Math.trunc(m_toThePoint);
-    min = m_toThePoint;
-    let s_afterThePoint = m_afterThePoint * 60;
-    sec = s_afterThePoint;
+    // let m_toThePoint = h_afterThePoint * 60;
+    // let m_afterThePoint = m_toThePoint - Math.trunc(m_toThePoint);
+    // min = m_toThePoint;
+    // let s_afterThePoint = m_afterThePoint * 60;
+    // sec = s_afterThePoint;
   }
-  const dayLength = hour + 'h ' + min.toFixed(0) + 'm ' + sec.toFixed(0) + 's';
+  // const dayLength = hour + 'h ' + min.toFixed(0) + 'm ' + sec.toFixed(0) + 's';
 
   const styles = StyleSheet.create({
     cloudIcon: {
-      width: 120,
-      height: 120,
+      width: 130,
+      height: 130,
     },
     icon: {
-      width: 60,
-      height: 60,
+      width: 50,
+      height: 50,
+      marginLeft: 20,
+      marginTop: -10,
+    },
+    iconWind: {
+      width: 55,
+      height: 55,
       marginLeft: 20,
       marginTop: -10,
     },
@@ -85,6 +97,7 @@ export default function WeatherHourly({
     },
     sunBox: {
       alignItems: 'center',
+      marginTop: 2,
       // backgroundColor: 'blue',
       // flex: 0.09,
     },
@@ -124,124 +137,133 @@ export default function WeatherHourly({
         flex: 1,
         height: '100%',
       }}>
-      <View style={{flexDirection: 'column', alignItems: 'center'}}>
-        <View style={{flexDirection: 'row', margin: 4}}>
-          {print(dataDay, 16, 'bold')}
-        </View>
+      <ScrollView>
+        <View style={{flexDirection: 'column', alignItems: 'center'}}>
+          <View style={{flexDirection: 'row', margin: 2}}>
+            {print(dataDay, 18, 'bold')}
+          </View>
+          <Divider />
 
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 1, margin: 4, alignItems: 'center'}}>
-            {print(
-              dataHourly.air_temperature + '°',
-              80,
-              'normal',
-              Number(dataHourly.air_temperature) > 0 ? 'white' : 'white',
-              true,
-            )}
-            <View style={{}}>
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 1, margin: 1, alignItems: 'center'}}>
               {print(
-                'min=' + minDayTemp + '°' + ' max=' + maxDayTemp + '°',
+                dataHourly.air_temperature + '°',
+                80,
+                'normal',
+                Number(dataHourly.air_temperature) > 0 ? 'white' : 'white',
+                true,
+              )}
+              <View style={{}}>
+                {print(
+                  'min=' + minDayTemp + '°' + ' max=' + maxDayTemp + '°',
+                  14,
+                  'bold',
+                )}
+                {print(
+                  'Облачность  ' + dataHourly.cloud_area_fraction + '%',
+                  14,
+                  'bold',
+                )}
+              </View>
+            </View>
+
+            <View style={{flex: 1, margin: 1, alignItems: 'center'}}>
+              {print(format(parseISO(dataHourly.UTC), 'HH:mm'), 30, 'bold')}
+
+              <Image
+                style={styles.cloudIcon}
+                source={WeatherIcon[dataHourly.icon]}
+              />
+            </View>
+          </View>
+          <Divider />
+          <View style={{flexDirection: 'column', alignItems: 'center'}}>
+            <View>
+              <Divider />
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', margin: 2}}>
+            <View style={{flex: 1, margin: 14}}>
+              <Image
+                style={styles.iconWind}
+                source={GetIconWindDirection(dataHourly.wind_from_direction)}
+              />
+            </View>
+
+            <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
+              {print('Ветер', 16, 'normal')}
+              {print(
+                GetWindDirection(dataHourly.wind_from_direction),
                 16,
                 'bold',
+                'black',
+                false,
               )}
               {print(
-                'Облачность  ' + dataHourly.cloud_area_fraction + '%',
-                16,
+                dataHourly.wind_speed + ' м/с',
+                18,
                 'bold',
+                'black',
+                false,
               )}
             </View>
           </View>
+          <Divider />
+          <View style={{flexDirection: 'row', margin: 2, marginBottom: -5}}>
+            <View style={{flex: 1, margin: 14}}>
+              <Image style={styles.icon} source={Button.bt_rain} />
+            </View>
 
-          <View style={{flex: 1, margin: 4, alignItems: 'center'}}>
-            {print(format(parseISO(dataHourly.UTC), 'HH:mm'), 30, 'bold')}
+            <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
+              {print('Осадки', 16, 'normal')}
+              {dataHourly.pricip === 0
+                ? print('не ожидаются', 18, 'bold', 'black', false)
+                : print(dataHourly.pricip + ' мм', 18, 'bold', 'black', false)}
+            </View>
+          </View>
+          <Divider />
+          <View style={{flexDirection: 'row', margin: 2, marginBottom: -5}}>
+            <View style={{flex: 1, margin: 14}}>
+              <Image style={styles.icon} source={Button.bt_press} />
+            </View>
 
-            <Image
-              style={styles.cloudIcon}
-              source={WeatherIcon[dataHourly.icon]}
-            />
+            <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
+              {print('Давление', 16, 'normal')}
+              {print(
+                dataHourly.air_pressure_at_sea_level + ' мм',
+                18,
+                'bold',
+                'black',
+                false,
+              )}
+            </View>
           </View>
-        </View>
-        <Divider />
-        <View style={{flexDirection: 'column', alignItems: 'center'}}>
-          <View>
-            <Divider />
-          </View>
-        </View>
-        <View style={{flexDirection: 'row', margin: 4}}>
-          <View style={{flex: 1, margin: 14}}>
-            <Image
-              style={styles.icon}
-              source={GetIconWindDirection(dataHourly.wind_from_direction)}
-            />
-          </View>
+          <Divider />
+          <View style={{flexDirection: 'row', margin: 2, marginBottom: -5}}>
+            <View style={{flex: 1, margin: 14}}>
+              <Image style={styles.icon} source={Button.bt_humidity} />
+            </View>
 
-          <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
-            {print('Ветер', 16, 'normal')}
-            {print(
-              GetWindDirection(dataHourly.wind_from_direction),
-              16,
-              'bold',
-              'black',
-              false,
-            )}
-            {print(dataHourly.wind_speed + ' м/с', 18, 'bold', 'black', false)}
+            <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
+              {print('Влажность', 16, 'normal')}
+              {print(
+                dataHourly.relative_humidity + ' %',
+                18,
+                'bold',
+                'black',
+                false,
+              )}
+            </View>
+          </View>
+          <Divider />
+          <View style={styles.sunBox}>
+            <Text style={styles.sun}>
+              Восход - {sunrise} Заход - {sunset}
+            </Text>
+            {/* <Text style={styles.sun}>Продолжительность дня - {dayLength}</Text> */}
           </View>
         </View>
-        <Divider />
-        <View style={{flexDirection: 'row', margin: 4}}>
-          <View style={{flex: 1, margin: 14}}>
-            <Image style={styles.icon} source={Button.bt_rain} />
-          </View>
-
-          <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
-            {print('Осадки', 16, 'normal')}
-            {dataHourly.pricip === 0
-              ? print('не ожидаются', 18, 'bold', 'black', false)
-              : print(dataHourly.pricip + ' мм', 18, 'bold', 'black', false)}
-          </View>
-        </View>
-        <Divider />
-        <View style={{flexDirection: 'row', margin: 4}}>
-          <View style={{flex: 1, margin: 14}}>
-            <Image style={styles.icon} source={Button.bt_press} />
-          </View>
-
-          <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
-            {print('Атмосферное давление', 16, 'normal')}
-            {print(
-              dataHourly.air_pressure_at_sea_level + ' мм',
-              18,
-              'bold',
-              'black',
-              false,
-            )}
-          </View>
-        </View>
-        <Divider />
-        <View style={{flexDirection: 'row', margin: 4}}>
-          <View style={{flex: 1, margin: 14}}>
-            <Image style={styles.icon} source={Button.bt_humidity} />
-          </View>
-
-          <View style={{flex: 1, marginLeft: -50, alignItems: 'center'}}>
-            {print('Влажность', 16, 'normal')}
-            {print(
-              dataHourly.relative_humidity + ' %',
-              18,
-              'bold',
-              'black',
-              false,
-            )}
-          </View>
-        </View>
-        <Divider />
-        <View style={styles.sunBox}>
-          <Text style={styles.sun}>
-            Восход - {sunrise} | Заход - {sunset}
-          </Text>
-          <Text style={styles.sun}>Продолжительность дня - {dayLength}</Text>
-        </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 }

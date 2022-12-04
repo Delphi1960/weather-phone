@@ -2,35 +2,34 @@
 import React from 'react';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import WeatherTableRoute from '../components/WeatherForecast/WeatherTableRoute';
 import MoonDataRoute from '../components/Moon/MoonDataRoute';
-import GraphDataRoute from '../components/Graph/GraphDataRoute';
 import GetCurrentCoordinates from '../locations/GetCurrentCoordinates';
-import WeatherHourlyRoute from '../components/WeatherForecast/WeatherHourlyRoute';
+// import WeatherHourlyRoute from '../components/WeatherForecast/WeatherHourlyRoute';
+import Forecast from './Forecast';
 
 const Tab = createMaterialBottomTabNavigator();
 
 // const NowRoute = () => <WeatherNow />;
-const NowRoute = () => <WeatherHourlyRoute />;
+// const NowRoute = () => <WeatherHourlyRoute />;
 const MoonRoute = () => <MoonDataRoute />;
-const GraphRoute = () => <GraphDataRoute />;
+// const GraphRoute = () => <GraphDataRoute />;
 const CurrentPositionRoute = () => <GetCurrentCoordinates />;
-// const ForecastRoute = () => <Forecast />;
+const ForecastRoute = () => <Forecast />;
 
 export default function BottomNavigate() {
   return (
     <>
       <Tab.Navigator
-        initialRouteName="NowRoute"
+        initialRouteName="ForecastRoute"
         activeColor="blue"
         inactiveColor="gray"
         // eslint-disable-next-line react-native/no-inline-styles
         barStyle={{backgroundColor: 'white'}}>
         <Tab.Screen
-          name="NowRoute"
-          component={NowRoute}
+          name="ForecastRoute"
+          component={ForecastRoute}
           options={{
-            tabBarLabel: 'Сегодня',
+            tabBarLabel: 'Forecast',
             tabBarIcon: ({color}) => (
               <MaterialCommunityIcons
                 name="sun-thermometer"
@@ -41,41 +40,13 @@ export default function BottomNavigate() {
           }}
         />
         <Tab.Screen
-          name="ForecastRoute"
-          component={WeatherTableRoute}
-          options={{
-            tabBarLabel: 'Прогноз',
-            tabBarIcon: ({color}) => (
-              <MaterialCommunityIcons
-                name="sun-wireless"
-                color={color}
-                size={26}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
           name="Moon"
           component={MoonRoute}
           options={{
-            tabBarLabel: 'Фазы Луны',
+            tabBarLabel: 'Moon phases',
             tabBarIcon: ({color}) => (
               <MaterialCommunityIcons
                 name="moon-waxing-crescent"
-                color={color}
-                size={26}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Graph"
-          component={GraphRoute}
-          options={{
-            tabBarLabel: 'Графики',
-            tabBarIcon: ({color}) => (
-              <MaterialCommunityIcons
-                name="chart-bell-curve"
                 color={color}
                 size={26}
               />

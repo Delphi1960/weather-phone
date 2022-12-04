@@ -5,9 +5,10 @@ import {useSetRecoilState} from 'recoil';
 import Geolocation from 'react-native-geolocation-service';
 // import {coordLocation} from '../recoil/yr_weather.state';
 import {coordinatesLocation} from '../recoil/location.state';
+import {Text} from 'react-native-paper';
 
 export default function GetLocationCoord() {
-  // const place = useRecoilValue(placeLocation);
+  const [, setIsCoordLoading] = useState(true);
   const setCoordLoc = useSetRecoilState(coordinatesLocation);
 
   // const [location, setLocation] = useState<CoordLocation | undefined>(
@@ -38,12 +39,15 @@ export default function GetLocationCoord() {
   }
 
   useEffect(() => {
+    setIsCoordLoading(true);
+
     RequestGetLocation();
     if (acces) {
       Geolocation.getCurrentPosition(
         position => {
           const {altitude, latitude, longitude} = position.coords;
           setCoordLoc({altitude, latitude, longitude});
+          setIsCoordLoading(false);
         },
         error => {
           console.log(error.code, error.message);
@@ -52,4 +56,6 @@ export default function GetLocationCoord() {
       );
     }
   }, [acces, setCoordLoc]);
+
+  return <Text>COORD</Text>;
 }

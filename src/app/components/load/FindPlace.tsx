@@ -9,11 +9,11 @@ const styles = StyleSheet.create({
   txt: {fontSize: 14, fontWeight: 'bold'},
 });
 
-export default function Loading() {
+export default function FindPlace() {
   return (
     <Stack fill center spacing={4}>
-      <Image style={styles.image} source={WeatherIcon.clearsky_day} />
-      <Text style={styles.txt}>Загрузка погоды...</Text>
+      <Image style={styles.image} source={WeatherIcon.search} />
+      <Text style={styles.txt}>Поиск места...</Text>
       <ActivityIndicator size="large" />
     </Stack>
   );

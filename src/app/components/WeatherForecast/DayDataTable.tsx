@@ -24,7 +24,7 @@ export default function DayDataTable({dayData}: Props) {
         {format(parseISO(dayData[0].UTC), 'eeee, dd MMMM')}
       </Text>
       {/* <DataTable style={{ backgroundColor:'transparent'}}> */}
-      <DataTable style={{backgroundColor: 'transparent', height: '95%'}}>
+      <DataTable style={{backgroundColor: 'transparent', height: '96%'}}>
         <DataTable.Header style={{height: 50, marginTop: 10}}>
           <DataTable.Title>
             {/* <Image style={styles.headerIcon} source={Button["bt_time"]} /> */}
@@ -80,6 +80,7 @@ export default function DayDataTable({dayData}: Props) {
                 </DataTable.Cell>
               </DataTable.Row>
             ))}
+            <Text>{`\n`}</Text>
           </ScrollView>
         </SafeAreaView>
       </DataTable>

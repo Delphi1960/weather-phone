@@ -1,6 +1,6 @@
 import {format} from 'date-fns';
 import React from 'react';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {Text} from 'react-native-paper';
 import DailyGraphData from '../../utils/DailyGraphData';
 import RelativeHumidity from './RelativeHumidity';
@@ -45,9 +45,12 @@ export default function GraphData({dt}: Props) {
         }}>
         {day}
       </Text>
-      <Temperature dataChart={dtDayTemperature} />
-      <WindSpeed dataChart={dtDayWindSpeed} />
-      <RelativeHumidity dataChart={dtRelativeHumidity} />
+      <ScrollView>
+        <Temperature dataChart={dtDayTemperature} />
+        <WindSpeed dataChart={dtDayWindSpeed} />
+        <RelativeHumidity dataChart={dtRelativeHumidity} />
+        <Text>{`\n\n`}</Text>
+      </ScrollView>
     </View>
   );
 }
