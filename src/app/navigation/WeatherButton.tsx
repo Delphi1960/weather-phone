@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
     margin: 1,
   },
 });
+// const btnColor = 'rgb(247, 218, 239)';
+const btnColor = 'rgb(220,230,250)';
 
 export default function WeatherButton({navigation}: Props) {
   return (
@@ -29,7 +31,7 @@ export default function WeatherButton({navigation}: Props) {
         <Button
           icon="weather-cloudy-clock"
           mode="elevated"
-          buttonColor="rgb(247, 218, 239)"
+          buttonColor={btnColor}
           textColor="navy"
           uppercase={false}
           // compact={true}
@@ -41,7 +43,7 @@ export default function WeatherButton({navigation}: Props) {
         <Button
           icon="table-clock"
           mode="elevated"
-          buttonColor="rgb(247, 218, 239)"
+          buttonColor={btnColor}
           textColor="navy"
           uppercase={false}
           // compact={true}
@@ -53,7 +55,7 @@ export default function WeatherButton({navigation}: Props) {
         <Button
           icon="chart-bell-curve"
           mode="elevated"
-          buttonColor="rgb(247, 218, 239)"
+          buttonColor={btnColor}
           textColor="navy"
           uppercase={false}
           // compact={true}
