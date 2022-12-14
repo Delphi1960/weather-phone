@@ -3,19 +3,20 @@ import React from 'react';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MoonDataRoute from '../components/Moon/MoonDataRoute';
-import GetCurrentCoordinates from '../locations/GetCurrentCoordinates';
-// import WeatherHourlyRoute from '../components/WeatherForecast/WeatherHourlyRoute';
+// import GetCurrentCoordinates from '../locations/GetCurrentCoordinates';
 import Forecast from './Forecast';
+import {StyleSheet} from 'react-native';
+import SelectLocation from '../locations/SelectLocation';
 
 const Tab = createMaterialBottomTabNavigator();
 
-// const NowRoute = () => <WeatherNow />;
-// const NowRoute = () => <WeatherHourlyRoute />;
-const MoonRoute = () => <MoonDataRoute />;
-// const GraphRoute = () => <GraphDataRoute />;
-const CurrentPositionRoute = () => <GetCurrentCoordinates />;
 const ForecastRoute = () => <Forecast />;
+const MoonRoute = () => <MoonDataRoute />;
+const CurrentPositionRoute = () => <SelectLocation />;
 
+const styles = StyleSheet.create({
+  buttonPanel: {backgroundColor: 'white'},
+});
 export default function BottomNavigate() {
   return (
     <>
@@ -23,8 +24,7 @@ export default function BottomNavigate() {
         initialRouteName="ForecastRoute"
         activeColor="blue"
         inactiveColor="gray"
-        // eslint-disable-next-line react-native/no-inline-styles
-        barStyle={{backgroundColor: 'white'}}>
+        barStyle={styles.buttonPanel}>
         <Tab.Screen
           name="ForecastRoute"
           component={ForecastRoute}
