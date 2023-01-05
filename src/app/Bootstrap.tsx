@@ -82,6 +82,7 @@ export default function Bootstrap({children}: Props) {
 
   // возьмем координаты места из recoil
   const coord = useRecoilValue(coordinatesLocation);
+  // console.log(coord);
 
   useEffect(() => {
     const loadInitialData = async () => {

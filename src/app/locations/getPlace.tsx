@@ -10,6 +10,7 @@ export default function getPlace(lat: number, lng: number) {
     sublocality_level_1: '',
     route: '',
     street_number: '',
+    formatted_address: '',
   };
   type AdressComponent = {
     long_name: string;
@@ -62,6 +63,7 @@ export default function getPlace(lat: number, lng: number) {
           }
         }
       }
+      place.formatted_address = json.results[2].formatted_address;
     })
     .catch(error => console.warn(error));
 

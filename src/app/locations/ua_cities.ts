@@ -26,15 +26,15 @@ export const searchLocation = [
   },
   {
     location: 'Академик Вернадский (Антарктида)',
-    coord: 'lat=-65.2428&lon=-64.2568&altitude=30',
+    coord: 'lat=-65.243&lon=-64.257&altitude=30',
   },
   {
     location: 'Горняк (Донецкая обл)',
-    coord: 'lat=48.0557&lon=37.37309&altitude=201',
+    coord: 'lat=48.0557&lon=37.3731&altitude=201',
   },
   {
     location: 'Ивано-Франковск',
-    coord: 'lat=48.92312&lon=24.71248&altitude=260',
+    coord: 'lat=48.9231&lon=24.7125&altitude=260',
   },
   {
     location: 'Харьков',
@@ -42,42 +42,42 @@ export const searchLocation = [
   },
   {
     location: 'Херсон',
-    coord: 'lat=46.63695&lon=32.61458&altitude=41',
+    coord: 'lat=46.6370&lon=32.6146&altitude=41',
   },
   {
     location: 'Хмельницкий',
-    coord: 'lat=49.41835&lon=26.97936&altitude=295',
+    coord: 'lat=49.4184&lon=26.9794&altitude=295',
   },
   {
     location: 'Николаев',
-    coord: 'lat=46.97625&lon=31.99296&altitude=42',
+    coord: 'lat=46.9763&lon=31.9930&altitude=42',
   },
   {
     location: 'Каролино-Бугаз (Одесская обл)',
-    coord: 'lat=46.14492&lon=30.52609&altitude=22',
+    coord: 'lat=46.1449&lon=30.5261&altitude=22',
   },
   {
     location: 'Полтава',
-    coord: 'lat=49.58925&lon=34.55367&altitude=156',
+    coord: 'lat=49.5893&lon=34.5535&altitude=156',
   },
   {
     location: 'Ровно',
-    coord: 'lat=50.62308&lon=26.22743&altitude=207',
+    coord: 'lat=50.6231&lon=26.2274&altitude=207',
   },
   {
     location: 'Сумы',
-    coord: 'lat=50.9216&lon=34.80029&altitude=143',
+    coord: 'lat=50.9216&lon=34.8003&altitude=143',
   },
   {
     location: 'Тернополь',
-    coord: 'lat=49.55404&lon=25.59067&altitude=320',
+    coord: 'lat=49.5540&lon=25.5907&altitude=320',
   },
   {
     location: 'Чернигов',
-    coord: 'lat=51.50551&lon=31.28487&altitude=127',
+    coord: 'lat=51.5055&lon=31.2849&altitude=127',
   },
   {
     location: 'Черновцы',
-    coord: 'lat=48.29045&lon=25.93241&altitude=250',
+    coord: 'lat=48.2905&lon=25.9324&altitude=250',
   },
 ];

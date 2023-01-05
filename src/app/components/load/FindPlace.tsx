@@ -6,7 +6,8 @@ import WeatherIcon from '../../../assets/index.icon';
 
 const styles = StyleSheet.create({
   image: {width: 100, height: 100},
-  txt: {fontSize: 14, fontWeight: 'bold'},
+  txt: {fontSize: 16, fontWeight: 'bold'},
+  ind: {marginLeft: -5, marginTop: -85},
 });
 
 export default function FindPlace() {
@@ -14,7 +15,7 @@ export default function FindPlace() {
     <Stack fill center spacing={4}>
       <Image style={styles.image} source={WeatherIcon.search} />
       <Text style={styles.txt}>Поиск места...</Text>
-      <ActivityIndicator size="large" />
+      <ActivityIndicator style={styles.ind} size="large" />
     </Stack>
   );
 }

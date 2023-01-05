@@ -6,4 +6,5 @@ export interface PlaceLocation {
   locality: string; //город
   route: string; //улица
   street_number: string; //номер дома
+  formatted_address: string;
 }

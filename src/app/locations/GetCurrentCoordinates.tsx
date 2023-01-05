@@ -29,21 +29,44 @@ export default function GetCurrentCoordinates() {
 
         <Text>==================================</Text>
         <View>
-          <Text style={styles.place}>
+          {/* <Text style={styles.place}>
             Номер дома: {getPlaceLocation.street_number}
           </Text>
-          <Text style={styles.place}>Улица: {getPlaceLocation.route}</Text>
           <Text style={styles.place}>
-            Район города: {getPlaceLocation.sublocality_level_1}
-          </Text>
-          <Text style={styles.place}>Город: {getPlaceLocation.locality}</Text>
-          <Text style={styles.place}>
-            Административный район:{' '}
-            {getPlaceLocation.administrative_area_level_2}
-          </Text>
-          <Text style={styles.place}>
-            Область: {getPlaceLocation.administrative_area_level_1}
-          </Text>
+            {getPlaceLocation.route} {getPlaceLocation.street_number}
+          </Text>*/}
+
+          {getPlaceLocation.route !== '' ? (
+            <Text style={styles.place}>
+              {getPlaceLocation.route} {getPlaceLocation.street_number}
+            </Text>
+          ) : null}
+
+          {getPlaceLocation.sublocality_level_1 !== '' ? (
+            <Text style={styles.place}>
+              {getPlaceLocation.sublocality_level_1}
+            </Text>
+          ) : null}
+
+          {getPlaceLocation.locality !== '' ? (
+            <Text style={styles.place}>{getPlaceLocation.locality}</Text>
+          ) : null}
+
+          {getPlaceLocation.administrative_area_level_2 !== '' ? (
+            <Text style={styles.place}>
+              {getPlaceLocation.administrative_area_level_2}
+            </Text>
+          ) : null}
+
+          {getPlaceLocation.administrative_area_level_1 !== '' ? (
+            <Text style={styles.place}>
+              {getPlaceLocation.administrative_area_level_1}
+            </Text>
+          ) : null}
+
+          <Text>==================================</Text>
+
+          <Text style={styles.place}>{getPlaceLocation.formatted_address}</Text>
         </View>
       </>
     </View>

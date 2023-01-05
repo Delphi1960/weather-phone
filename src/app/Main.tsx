@@ -7,6 +7,8 @@ import GetCurrentCoordinates from './locations/GetCurrentCoordinates';
 import BottomNavigate from './navigation/BottomNavigate';
 import {placeLocation} from './recoil/location.state';
 import {PlaceLocation} from './types/locations.type';
+import {Alert, StyleSheet, View} from 'react-native';
+import ModalTester from './locations/ModalTester';
 
 const RootStack = createNativeStackNavigator();
 
@@ -19,24 +21,82 @@ export default function Main() {
     setPlace(getPlaceLocation);
   }, [getPlaceLocation]);
 
+  const styles = StyleSheet.create({
+    left: {marginLeft: -20, flexDirection: 'row'},
+    right: {flexDirection: 'row'},
+  });
+
+  let foundPlace;
+  if (place.sublocality_level_1.length > 1) {
+    foundPlace = place.locality + ', ' + place.sublocality_level_1;
+  } else {
+    foundPlace = place.locality;
+  }
+  // console.log(foundPlace);
   return (
     <RootStack.Navigator>
       <RootStack.Screen
-        name={
-          place.route ||
-          place.sublocality_level_1 ||
-          place.locality ||
-          'undeffined'
-        }
+        name={foundPlace || 'undeffined'}
         component={BottomNavigate}
+        options={props => ({
+          // headerLeft: () => (
+          //   <View style={styles.left}>
+          //     <IconButton
+          //       icon={prop => <MaterialCommunityIcons name="menu" {...prop} />}
+          //       onPress={() => props.navigation.navigate('DriverMenu')}
+          //       color="blue"
+          //     />
+          //   </View>
+          // ),
+          headerRight: () => (
+            <View style={styles.right}>
+              <IconButton
+                icon={prop => (
+                  <MaterialCommunityIcons
+                    name="map-marker-radius-outline"
+                    {...prop}
+                  />
+                )}
+                onPress={() =>
+                  props.navigation.navigate('GetCurrentCoordinates')
+                }
+                // color="blue"
+              />
+              <IconButton
+                icon={prop => (
+                  <MaterialCommunityIcons
+                    name="information-outline"
+                    {...prop}
+                  />
+                )}
+                onPress={() =>
+                  Alert.alert(
+                    'О приложении.',
+                    'Погодные данные предоставлены Норвежским метеорологическим институтом. \n' +
+                      ' Ссылка для разработчиков https://developer.yr.no/',
+                  )
+                }
+                // color="blue"
+              />
+              <IconButton
+                icon={prop => <MaterialCommunityIcons name="menu" {...prop} />}
+                // onPress={() => <ModalTester />}
+                onPress={() => props.navigation.navigate('ModalTester')}
+                // color="blue"
+              />
+            </View>
+          ),
+        })}
+      />
+
+      <RootStack.Screen
+        name="ModalTester"
+        component={ModalTester}
         options={props => ({
           headerRight: () => (
             <IconButton
-              // eslint-disable-next-line @typescript-eslint/no-shadow
-              icon={props => (
-                <MaterialCommunityIcons name="map-marker" {...props} />
-              )}
-              onPress={() => props.navigation.navigate('GetCurrentCoordinates')}
+              icon={prop => <MaterialCommunityIcons name="menu" {...prop} />}
+              onPress={() => props.navigation.goBack()}
               color="blue"
             />
           ),
@@ -49,9 +109,11 @@ export default function Main() {
         options={props => ({
           headerRight: () => (
             <IconButton
-              // eslint-disable-next-line @typescript-eslint/no-shadow
-              icon={props => (
-                <MaterialCommunityIcons name="map-marker" {...props} />
+              icon={prop => (
+                <MaterialCommunityIcons
+                  name="map-marker-radius-outline"
+                  {...prop}
+                />
               )}
               onPress={() => props.navigation.goBack()}
               color="blue"
